@@ -1,0 +1,45 @@
+use supermark;
+CREATE TABLE `productos`(
+`ID` INT(11) NOT NULL AUTO_INCREMENT,
+`nombre` VARCHAR(25) NOT NULL,
+`precio` DOUBLE NOT NULL,
+`stock` INT(250),
+PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `rol`(
+`id_rol` INTEGER NOT NULL AUTO_INCREMENT,
+`nombre` VARCHAR(25) NOT NULL,
+PRIMARY KEY(`id_rol`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `usuarios`(
+`id_usuario` INTEGER NOT NULL AUTO_INCREMENT,
+`id_rol` INTEGER NOT NULL,
+`email` VARCHAR(25) NOT NULL,
+`password` VARCHAR(25) NOT NULL,
+`usuario` VARCHAR(40) NOT NULL,
+PRIMARY KEY(id_usuario),
+CONSTRAINT fk_rol FOREIGN KEY (id_rol) REFERENCES rol(id_rol)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `ventas`(
+`id_venta` INTEGER NOT NULL AUTO_INCREMENT,
+`id_usuario` INTEGER NOT NULL,
+`fecha` DATE NOT NULL,
+PRIMARY KEY(id_venta),
+CONSTRAINT fk_id_usuario FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `ventas_productos`(
+`id` INTEGER NOT NULL,
+`id_producto` INTEGER NOT NULL,
+`precio` DOUBLE NOT NULL,
+`id_venta` INTEGER NOT NULL,
+`cantidad` INTEGER NOT NULL,
+PRIMARY KEY(id),
+CONSTRAINT fk_id_producto FOREIGN KEY (id_producto) REFERENCES productos(ID),
+CONSTRAINT fk_id_venta FOREIGN KEY (id_venta) REFERENCES ventas(id_venta)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+describe ventas_productos;

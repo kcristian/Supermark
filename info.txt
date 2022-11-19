@@ -1,2 +1,9 @@
 cruz cristian
 calle daniel
+
+conectores a bd
+Python.exe -m pip install MySQL-connector-python
+python.exe -m pip install sqlite3
+
+db brower for sqlite
+https://sqlitebrowser.org/dl/
