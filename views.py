@@ -267,7 +267,9 @@ class v_ventas:
 
         miframe3=Frame(self.root)
         miframe3.pack()
+        self.labelidventavalue=StringVar()
         self.labelidventavalue=""
+
         self.labelusernamevalue=""
         self.labelidusuariovalue=""
         self.labelfechavalue=""
@@ -293,6 +295,8 @@ class v_ventas:
         self.labelespaciador.grid(row=5,column=2)
 
     ##
+    def getIdLabel(self):
+        return self.labelidventavalue.get()
     def getIdText(self):
         return self.cuadrotexto1var.get()
     def click_tabla(self,event):
@@ -301,6 +305,7 @@ class v_ventas:
         t=valores['values']
 
         self.labelidventa.config(text=t[0])
+        
         self.labelusername.config(text=t[1])
         self.labelidusuario.config(text=t[2])
         self.labelfecha.config(text=t[3])

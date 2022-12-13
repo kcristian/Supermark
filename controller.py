@@ -88,13 +88,14 @@ class Ctrl_ventas:
         self.view.cargar_tabla_datos(self.model.dame_ventas())
     
     def buscar_ventas_usuario(self):
-        self.id=self.view.getIdText()
+        self.id_usuario=self.view.getIdText() #id de usuario tomado del cuadro de texto
         self.view.limpiar_tabla()
-        self.view.cargar_tabla_datos(self.model.dame_ventas_usuario(int(self.id)))
+        self.view.cargar_tabla_datos(self.model.dame_ventas_usuario(int(self.id_usuario))) #carga la tabla con las ventas del usuario
+        
     def mostrarDetalle(self):
         root=Tk()
         v=v_detalle_venta(root)
-        c=Ctrl_detalle_venta(self.model,v,int(self.id))
+        c=Ctrl_detalle_venta(self.model,v,int(self.view.labelidventa.cget("text")))
         self.view.root.destroy()
 
 class Ctrl_detalle_venta:
@@ -108,13 +109,15 @@ class Ctrl_detalle_venta:
 
     def cargarVentana(self):
         venta=self.model.dame_una_venta(self.id_venta)
-        self.view.setLabelVenta(2)
-        self.view.setLabelFecha("2025-12-10")
-        lista_registros=self.model.dame_detalle_venta(self.id_venta)
+        self.view.setLabelVenta(venta[0])
+        self.view.setLabelFecha(venta[1])
+
+        lista_registros=self.model.dame_detalle_venta(int(self.id_venta))
         total=0
         for registro in lista_registros:
             total+=float(registro[3])
         self.view.setLabelTotal(total)
+        
         self.view.CargarDatosTabla(lista_registros)
 
     def accionAceptar(self):
@@ -224,5 +227,10 @@ class Controlador_registro:
     #   Metodo necesario para el retorno a la ventan de inicio sesion y cerrando a la vez la ventana de registro
     def destruirVentana(self):
         self.view.root.destroy()
-   
+
+# root=Tk()
+# v=v_ventas(root)
+# m=Modelo()
+# c=Ctrl_ventas(m,v)
+# root.mainloop()
 

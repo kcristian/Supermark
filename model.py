@@ -50,11 +50,19 @@ class Modelo:
         #devuelve registro de nombre,precio,cantidad y subtotal
         query="SELECT Productos.descripcion,Productos.precio,Ventas_productos.cantidad,Productos.precio * Ventas_productos.cantidad " 
         query+="FROM Productos INNER JOIN Ventas_productos ON Productos.id_producto=Ventas_productos.id_producto "
-        query+=f"INNER JOIN Ventas ON Ventas.id_venta=Ventas_productos.id_venta WHERE Ventas.id_venta={id}"
+        query+=f"INNER JOIN Ventas ON Ventas_productos.id_venta=Ventas.id_venta WHERE Ventas.id_venta={id}"
+        
+        # query="SELECT Productos.descripcion,Productos.precio,Ventas_productos.cantidad, Productos.precio * Ventas_productos.cantidad "
+        # query+="FROM Productos INNER JOIN Ventas_productos ON Productos.id_producto=Ventas_productos.id_producto"
+        # query+=f" WHERE Ventas_productos.id_venta={id}"
+
+        # QUERY="SELECT Productos.descripcion,Productos.precio,Ventas_productos.cantidad, Productos.precio * Ventas_productos.cantidad"
+        # QUERY+=f" FROM Productos,Ventas_productos WHERE Ventas_productos.id_venta={id} "
+
         self.cur.execute(query)
-        resutlado=self.cur.fetchall()
+        resultado=self.cur.fetchall()
         self.con.commit()
-        return resutlado
+        return resultado
 
     def dame_usuario(self,user,pas):
         self.cur.execute(f"SELECT * FROM Usuarios WHERE username='{user}' AND password='{pas}'")
@@ -81,9 +89,17 @@ class Modelo:
     def crear_detalle_venta(self,id_producto,id_venta,cantidad):
         self.cur.execute(f"INSERT INTO Ventas_productos VALUES(NULL,{id_producto},{id_venta},{cantidad})")
         self.con.commit()
+    def dame_detalles_venta(self):
+        self.cur.execute(f"SELECT * FROM Ventas_productos")
+        resultado=self.cur.fetchall()
+        return resultado
 m=Modelo()
-res=m.dame_detalle_venta(5)
+# m.crear_detalle_venta(1,5,2)
+# m.crear_detalle_venta(1,5,3)
+
+res=m.dame_detalles_venta()
 for elemento in res:
     print(elemento)
+
 
 
