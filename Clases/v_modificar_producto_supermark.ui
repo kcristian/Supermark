@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>594</width>
+    <height>475</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="titulo">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>10</y>
+      <width>241</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 16pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>MODIFICAR PRODUCTO</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblid">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>70</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>id de producto: </string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtid">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>69</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Arial&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbldescripcion">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>140</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>nombre y descripcion: </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblprecio">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>180</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>precio:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblstock">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>220</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>stock: </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblcategoria">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>260</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>categoria: </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblvencimiento">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>300</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>vencimiento:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtdescripcion">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>140</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Arial&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtprecio">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>180</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Arial&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtstock">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>220</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Arial&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtcategoria">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>260</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Arial&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtdia">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>300</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Arial&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtmes">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>300</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Arial&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtanio">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>300</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Arial&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbldia">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>300</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>dia:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblmes">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>300</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>mes:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblanio">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>300</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>año: </string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnbuscar">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>70</y>
+      <width>75</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Buscar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnguardar">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>390</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Guardar Cambios</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnatras">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>390</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Atras</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
